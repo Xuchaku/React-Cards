@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, MouseEventHandler } from "react";
+import React, { FC, forwardRef } from "react";
 import "./Card.css";
 import { animated, useTransition } from "react-spring";
 import CardType from "./../../types/CardType";
@@ -11,6 +11,10 @@ type CardPropsType = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
   setSelected: React.Dispatch<React.SetStateAction<string>>;
 };
+const MyAnimatedComponentWithRefForwarding = animated(
+  forwardRef((ref: any) => <div ref={ref}></div>)
+);
+
 const Card: FC<CardPropsType> = ({ data, isMore, setSelected, setModal }) => {
   const transition = useTransition(isMore, {
     from: { opacity: 0, transform: "scale(0.7)", x: 100 },
