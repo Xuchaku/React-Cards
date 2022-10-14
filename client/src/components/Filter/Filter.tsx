@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC } from "react";
 import "./Filter.css";
-import search from "./../../assets/icons/search.svg";
+import { ReactComponent as Search } from "./../../assets/icons/search.svg";
 type FilterPropsType = {
   filter: string;
   change: React.Dispatch<React.SetStateAction<string>>;
@@ -18,7 +18,7 @@ const Filter: FC<FilterPropsType> = ({ filter, change }) => {
         onChange={changeInputHandler}
         placeholder="Поиск..."
       />
-      <img className="Filter__icon" src={search}></img>
+      <Search className="Filter__icon"></Search>
     </div>
   );
 };

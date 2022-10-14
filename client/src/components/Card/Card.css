@@ -1,0 +1,110 @@
+.Card {
+  color: #a1a1a1;
+  cursor: pointer;
+  border-radius: 8px;
+  position: relative;
+  z-index: 0;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.1);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.1);
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.1);
+}
+.Card__columns {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 50px;
+}
+.Card__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.Card__wrapper.Card__wrapper-abs {
+  position: absolute;
+  padding: 0 25px 30px 25px;
+  background-color: white;
+  border-radius: 12px;
+  left: 0;
+
+  top: 0;
+}
+.Card__punkt {
+  color: black;
+  width: 250px;
+  font-weight: bold;
+}
+.Card-visible {
+  z-index: 999;
+}
+.Card__header {
+  color: black;
+  margin-bottom: 50px;
+}
+.Card__wrapper {
+  padding: 30px 15px;
+  min-width: 300px;
+
+  min-height: 300px;
+}
+.Card__trunc {
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Card__info {
+  margin-bottom: 15px;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.Card__text {
+  text-align: left;
+}
+.Card__link {
+  text-decoration: underline;
+}
+.Card__icon {
+  fill: #c9acd1;
+  stroke: #c9acd1;
+  margin-right: 15px;
+  width: 25px;
+  height: 25px;
+}
+.Card__other-header {
+  margin-bottom: 15px;
+}
+.Card__button-close {
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin-left: 50%;
+  transform: translate(-50%, -25px);
+  background-color: purple;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+}
+.Card__button-close::after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 0;
+  border-top: 1px solid white;
+  margin: auto;
+  background-color: white;
+  transform: rotate(45deg);
+}
+.Card__button-close::before {
+  display: block;
+  content: "";
+  width: 20px;
+  margin: auto;
+  height: 0;
+  border-top: 1px solid white;
+  transform: rotate(-45deg);
+}

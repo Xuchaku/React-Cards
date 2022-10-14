@@ -25,6 +25,8 @@
 .Filter__icon {
   transition: 0.3s;
   position: absolute;
+  fill: #c9acd1;
+  stroke: #c9acd1;
   right: 12px;
   width: 30px;
   height: 30px;
