@@ -1,7 +1,7 @@
 class API {
   constructor() {}
   async getData(url: string, query?: string) {
-    const response = await fetch(url);
+    const response = await fetch(url + (query ? `?term=${query}` : ""));
     if (response.ok) {
       const data = await response.json();
       return data;

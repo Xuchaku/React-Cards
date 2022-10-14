@@ -1,6 +1,7 @@
-import React, { FC, forwardRef } from "react";
-import "./Card.css";
+import React, { CSSProperties, FC } from "react";
 import { animated, useTransition } from "react-spring";
+
+import "./Card.css";
 import CardType from "./../../types/CardType";
 import { ReactComponent as Mail } from "./../../assets/icons/mail.svg";
 import { ReactComponent as Phone } from "./../../assets/icons/phone.svg";
@@ -8,14 +9,18 @@ import { ReactComponent as Phone } from "./../../assets/icons/phone.svg";
 type CardPropsType = {
   data: CardType;
   isMore: boolean;
+  style: any;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
   setSelected: React.Dispatch<React.SetStateAction<string>>;
 };
-const MyAnimatedComponentWithRefForwarding = animated(
-  forwardRef((ref: any) => <div ref={ref}></div>)
-);
 
-const Card: FC<CardPropsType> = ({ data, isMore, setSelected, setModal }) => {
+const Card: FC<CardPropsType> = ({
+  data,
+  isMore,
+  setSelected,
+  setModal,
+  style,
+}) => {
   const transition = useTransition(isMore, {
     from: { opacity: 0, transform: "scale(0.7)", x: 100 },
     enter: { opacity: 1, transform: "scale(1)", x: -100 },
@@ -34,7 +39,8 @@ const Card: FC<CardPropsType> = ({ data, isMore, setSelected, setModal }) => {
     event.stopPropagation();
   }
   return (
-    <div
+    <animated.div
+      style={style}
       className={`Card ${isMore ? "Card-visible" : undefined}`}
       onClick={selectCardHandler(data.name)}
     >
@@ -103,7 +109,7 @@ const Card: FC<CardPropsType> = ({ data, isMore, setSelected, setModal }) => {
           ""
         );
       })}
-    </div>
+    </animated.div>
   );
 };
 

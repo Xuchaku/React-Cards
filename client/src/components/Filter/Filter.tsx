@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FC } from "react";
+
 import "./Filter.css";
 import { ReactComponent as Search } from "./../../assets/icons/search.svg";
 type FilterPropsType = {

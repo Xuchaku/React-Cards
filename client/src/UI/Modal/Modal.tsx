@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { animated, useTransition } from "react-spring";
+
 import "./Modal.css";
 
 type ModalPropsType = {
