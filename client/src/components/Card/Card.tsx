@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC } from "react";
+import React, { FC } from "react";
 import { animated, useTransition } from "react-spring";
 
 import "./Card.css";

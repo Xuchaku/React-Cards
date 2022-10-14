@@ -11,7 +11,7 @@ import Error from "./UI/Error/Error";
 
 function App() {
   const [filter, setFilter] = useState<string>("");
-  const [mode, setMode] = useState(true);
+  const [mode, setMode] = useState(false);
   const { error, loading, cards } = useFetching(SERVER_POINT, mode, filter);
   //false - Использование возможности SPA без запроса на сервер при фильтрации
   //true - Использование нативного подхода http://127.0.0.1:5000?term=filter
