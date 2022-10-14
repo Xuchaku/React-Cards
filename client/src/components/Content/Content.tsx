@@ -23,9 +23,12 @@ const Content: FC<ContentPropsType> = ({ cards }) => {
           ></Card>
         );
       })}
-      {modal ? (
-        <Modal setModal={setModal} setSelected={setSelected}></Modal>
-      ) : null}
+
+      <Modal
+        modal={modal}
+        setModal={setModal}
+        setSelected={setSelected}
+      ></Modal>
     </div>
   );
 };
