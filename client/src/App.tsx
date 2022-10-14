@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
 import "./App.css";
 import Content from "./components/Content/Content";
-import Filter from "./components/Filter/FIlter";
+import Filter from "./components/Filter/Filter";
+
 import useFetching from "./hooks/useFetching";
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
       return cards;
     }
   }, [cards]);
+
   return (
     <div className="App">
-      <Filter></Filter>
+      <Filter filter={filter} change={setFilter}></Filter>
       {loading ? "" : <Content cards={filteredCards}></Content>}
     </div>
   );

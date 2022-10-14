@@ -1,11 +1,19 @@
 import React, { FC } from "react";
 import CardType from "../../types/CardType";
+import Card from "../Card/Card";
+import "./Content.css";
 
-type ContentType = {
+type ContentPropsType = {
   cards: CardType[];
 };
-const Content: FC<ContentType> = ({ cards }) => {
-  return <div>Content</div>;
+const Content: FC<ContentPropsType> = ({ cards }) => {
+  return (
+    <div className="Content">
+      {cards.map((card) => {
+        return <Card key={card.name} data={card}></Card>;
+      })}
+    </div>
+  );
 };
 
 export default Content;
